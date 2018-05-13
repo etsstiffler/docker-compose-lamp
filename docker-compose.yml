@@ -27,9 +27,9 @@ services:
       - ${MYSQL_LOG_DIR-./logs/mysql}:/var/log/mysql
     environment:
       MYSQL_ROOT_PASSWORD: tiger
-      MYSQL_DATABASE: tnb
-      MYSQL_USER: tnb
-      MYSQL_PASSWORD: tnb
+      MYSQL_DATABASE: kursd
+      MYSQL_USER: kursd
+      MYSQL_PASSWORD: kursd
   phpmyadmin:
     image: phpmyadmin/phpmyadmin
     container_name: 'tnb-phpmyadmin'

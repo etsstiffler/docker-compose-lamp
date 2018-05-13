@@ -1,5 +1,5 @@
 <?php
-$link = mysqli_connect("mysql", "tnb", "tnb", "tnb");
+$link = mysqli_connect("mysql", "kursd", "kursd", "kursd");
 
 if (!$link) {
     echo "Error: Unable to connect to MySQL." . PHP_EOL;
@@ -12,3 +12,5 @@ echo "Success: A proper connection to MySQL was made! The docker database is gre
 echo "Host information: " . mysqli_get_host_info($link) . PHP_EOL;
 
 mysqli_close($link);
+
+
