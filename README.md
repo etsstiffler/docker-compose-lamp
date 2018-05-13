@@ -4,7 +4,7 @@ This is a basic LAMP stack environment built using Docker Compose. It consists f
 
 * PHP 7.1
 * Apache 2.4
-* MySQL 5.7
+* MariaDB 10.3
 * phpMyAdmin
 
 ## Installation
