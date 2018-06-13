@@ -4,7 +4,7 @@ services:
   webserver:
     build: 
       context: ./bin/webserver
-    container_name: 'tnb-webserver'
+    container_name: 'jgs2-webserver'
     restart: 'always'
     ports:
       - "80:80"
@@ -18,7 +18,7 @@ services:
       - ${LOG_DIR-./logs/apache2}:/var/log/apache2
   mysql:
     build: ./bin/mysql
-    container_name: 'tnb-mysql'
+    container_name: 'jgs2-mysql'
     restart: 'always'
     ports:
       - "3306:3306"
@@ -27,13 +27,9 @@ services:
       - ${MYSQL_LOG_DIR-./logs/mysql}:/var/log/mysql
     environment:
       MYSQL_ROOT_PASSWORD: tiger
-      MYSQL_DATABASE: kursd
-      MYSQL_DATABASE: joomla_test
-      MYSQL_USER: kursd
-      MYSQL_PASSWORD: kursd
   phpmyadmin:
     image: phpmyadmin/phpmyadmin
-    container_name: 'tnb-phpmyadmin'
+    container_name: 'jgs2-phpmyadmin'
     links:
       - mysql
     environment:
@@ -43,8 +39,3 @@ services:
       - '8080:80'
     volumes: 
       - /sessions
-  redis:
-    container_name: 'tnb-redis'
-    image: redis:latest
-    ports:
-      - "6379:6379"
