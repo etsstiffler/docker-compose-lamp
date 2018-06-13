@@ -25,6 +25,7 @@ services:
     volumes: 
       - ${MYSQL_DATA_DIR-./data/mysql}:/var/lib/mysql
       - ${MYSQL_LOG_DIR-./logs/mysql}:/var/log/mysql
+      - ${DOCUMENT_ROOT-./bin/mysql/entrypoint.sql}:/docker-entrypoint-initdb.d/create_users_db.sql
     environment:
       MYSQL_ROOT_PASSWORD: tiger
   phpmyadmin:
