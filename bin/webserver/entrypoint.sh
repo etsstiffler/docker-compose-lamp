@@ -17,7 +17,7 @@ htpasswd -d /etc/vsftpd/ftpd.passwd Joomla_15 Joomla_15
 htpasswd -d /etc/vsftpd/ftpd.passwd Joomla_16 Joomla_16
 
 useradd --home /home/vsftpd --gid nogroup -m --shell /bin/false vsftpd
-
+mkdir /etc/vsftpd_user_conf
 echo "local_root=/var/www/Joomla_01" > ~/etc/vsftpd_user_conf/Joomla_01
 echo "local_root=/var/www/Joomla_02" > ~/etc/vsftpd_user_conf/Joomla_02
 echo "local_root=/var/www/Joomla_03" > ~/etc/vsftpd_user_conf/Joomla_03
@@ -34,6 +34,3 @@ echo "local_root=/var/www/Joomla_13" > ~/etc/vsftpd_user_conf/Joomla_13
 echo "local_root=/var/www/Joomla_14" > ~/etc/vsftpd_user_conf/Joomla_14
 echo "local_root=/var/www/Joomla_15" > ~/etc/vsftpd_user_conf/Joomla_15
 echo "local_root=/var/www/Joomla_16" > ~/etc/vsftpd_user_conf/Joomla_16
-
-
-mkdir /etc/vsftpd_user_conf
