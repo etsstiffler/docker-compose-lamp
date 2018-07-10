@@ -43,4 +43,4 @@ RUN docker-php-ext-install -j$(nproc) gd
 RUN a2enmod rewrite headers
 
 # Install vsftpd
-RUN apt-get install vsftpd 
+RUN apt-get -y install vsftpd 
