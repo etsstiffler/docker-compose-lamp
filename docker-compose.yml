@@ -20,7 +20,7 @@ services:
       - ${LOG_DIR-./logs/apache2}:/var/log/apache2
       - ${DOCUMENT_ROOT-./bin/webserver/entrypoint.sh}:/docker-entrypoint-initdb.d/entrypoint.sh
     entrypoint:
-      - bin/webserver/entrypoint.sh
+      - entrypoint.sh
   mysql:
     build: ./bin/mysql
     container_name: 'jgs2-mysql'
