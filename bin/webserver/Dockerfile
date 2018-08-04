@@ -44,5 +44,3 @@ RUN a2enmod rewrite headers
 
 # Install vsftpd
 RUN apt-get -y install vsftpd 
-
-EXPOSE 21/tcp
