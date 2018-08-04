@@ -18,8 +18,10 @@ services:
       - ${VSFTPD_CONF-./config/vsftpd/vsftpd.conf}:/etc/vsftpd.conf
       - ${VHOSTS_DIR-./config/vhosts}:/etc/apache2/sites-enabled
       - ${LOG_DIR-./logs/apache2}:/var/log/apache2
-      - ${DOCUMENT_ROOT-./bin/webserver/entrypoint.sh}:/docker-entrypoint-initdb.d/init.sh
-  mysql:
+      - ${DOCUMENT_ROOT-./bin/webserver/entrypoint.sh}:/docker-entrypoint-initdb.d/entrypoint.sh
+    entrypoint:
+      - bin/webserver/entrypoint.sh
+      mysql:
     build: ./bin/mysql
     container_name: 'jgs2-mysql'
     restart: 'always'
