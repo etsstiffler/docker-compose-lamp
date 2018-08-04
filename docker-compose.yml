@@ -21,7 +21,7 @@ services:
       - ${DOCUMENT_ROOT-./bin/webserver/entrypoint.sh}:/docker-entrypoint-initdb.d/entrypoint.sh
     entrypoint:
       - bin/webserver/entrypoint.sh
-      mysql:
+  mysql:
     build: ./bin/mysql
     container_name: 'jgs2-mysql'
     restart: 'always'
