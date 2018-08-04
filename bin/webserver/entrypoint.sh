@@ -1,3 +1,4 @@
+chown root:root /etc/vsftpd.conf
 /etc/init.d/vsftpd restart
 echo "/bin/false" > nano /etc/shells
 
