@@ -15,7 +15,7 @@ services:
     volumes: 
       - ${DOCUMENT_ROOT-./www}:/var/www/html
       - ${PHP_INI-./config/php/php.ini}:/usr/local/etc/php/php.ini
-      - ${VSFTPD_CONF-./config/vsftpd/vsftpd.conf}:/etc/vsftpd.conf.backup
+      - ${VSFTPD_CONF-./config/vsftpd/vsftpd.conf}:/etc/vsftpd.conf
       - ${VHOSTS_DIR-./config/vhosts}:/etc/apache2/sites-enabled
       - ${LOG_DIR-./logs/apache2}:/var/log/apache2
   mysql:
