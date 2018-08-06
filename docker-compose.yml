@@ -51,7 +51,7 @@ services:
       - "21:21"
     volumes:
     - ${DOCUMENT_ROOT-./www}:/storage/ftp/
-    enviroment:
+    environment:
     - FTP_USER: dev
     - FTP_PASSWORD: dev
     - FTP_PATH: /storage/ftp/
