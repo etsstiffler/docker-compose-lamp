@@ -9,7 +9,6 @@ services:
     ports:
       - "80:80"
       - "443:443"
-      - "21:21"
     links: 
       - mysql
     volumes: 
@@ -33,6 +32,7 @@ services:
   phpmyadmin:
     image: phpmyadmin/phpmyadmin
     container_name: 'jgs2-phpmyadmin'
+    restart: 'always'
     links:
       - mysql
     environment:
@@ -42,3 +42,16 @@ services:
       - '8080:80'
     volumes: 
       - /sessions
+  ftp:
+    build:
+      context: ./bin/vsftpd/
+    container-name: 'jgs2-ftp'
+    restart: 'always'
+    ports:
+      - "21:21"
+    volumes:
+    - ${DOCUMENT_ROOT-./www}:/storage/ftp/
+    enviroment:
+    - FTP_USER: dev
+    - FTP_PASSWORD: dev
+    - FTP_PATH: /storage/ftp/
