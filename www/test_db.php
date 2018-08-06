@@ -1,5 +1,5 @@
 <?php
-$link = mysqli_connect("mysql", "kursd", "kursd", "kursd");
+$link = mysqli_connect("mysql", "root", "tiger", "mysql");
 
 if (!$link) {
     echo "Error: Unable to connect to MySQL." . PHP_EOL;
