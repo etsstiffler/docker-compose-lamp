@@ -1,9 +1,4 @@
-#!/bin/sh
+#!/usr/bin/env bash
 
-echo "/bin/false" > nano /etc/shells
-
-
-adduser joomla1 --ingroup www-data --shell /bin/false --home /storage/ftp/joomla1 --no-create-home --gecos "" --disabled-password
+adduser joomla1 --ingroup dev --shell /bin/false --home /storage/ftp/joomla1  --gecos "" --disabled-password
 echo joomla1:joomla1 | chpasswd
-
-/etc/init.d/vsftpd restart
