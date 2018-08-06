@@ -45,7 +45,7 @@ services:
   ftp:
     build:
       context: ./bin/vsftpd/
-    container-name: 'jgs2-ftp'
+    container_name: 'jgs2-ftp'
     restart: 'always'
     ports:
       - "21:21"
