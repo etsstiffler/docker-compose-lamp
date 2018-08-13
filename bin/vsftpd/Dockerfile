@@ -1,32 +1,27 @@
-FROM debian:stable-slim
+#+++++++++++++++++++++++++++++++++++++++
+# Dockerfile for webdevops/vsftp:latest
+#    -- automatically generated  --
+#+++++++++++++++++++++++++++++++++++++++
 
-ARG FTP_UID=48
-ARG FTP_GID=48
+FROM webdevops/base:latest
+
+ENV FTP_USER=application \
+    FTP_PASSWORD=application \
+    FTP_UID=1000 \
+    FTP_GID=1000 \
+    FTP_PATH=/data/ftp/
+
+COPY conf/ /opt/docker/
+
 RUN set -x \
-  && groupadd -g ${FTP_GID} ftp \
-  && useradd --no-create-home --home-dir /srv -s /bin/false --uid ${FTP_UID} --gid ${FTP_GID} -c 'ftp daemon' ftp \
-  ;
+    # Install vsftp
+    && apt-install \
+        vsftpd libpam-pwdfile\
+    && ln -sf /opt/docker/etc/vsftpd/vsftpd.conf /etc/vsftpd.conf \
+    && mkdir -p \
+            /var/run/vsftpd/empty \
+            /var/log/supervisor \
+    && docker-run-bootstrap \
+    && docker-image-cleanup
 
-RUN set -x \
-  && apt-get update \
-  && apt-get install -y --no-install-recommends vsftpd db5.3-util whois \
-  && apt-get clean \
-  && rm -rf /var/lib/apt/lists/* \
-  ;
-
-RUN set -x \
-  && mkdir -p /var/run/vsftpd/empty /etc/vsftpd/user_conf /var/ftp /srv \
-  && touch /var/log/vsftpd.log \
-  && rm -rf /srv/ftp \
-  ;
-
-COPY vsftpd*.conf /etc/
-COPY vsftpd_virtual /etc/pam.d/
-COPY *.sh /
-
-VOLUME ["/etc/vsftpd", "/srv"]
-
-EXPOSE 21 4559 4560 4561 4562 4563 4564
-
-ENTRYPOINT ["/entry.sh"]
-CMD ["vsftpd"]
+EXPOSE 20 21 12020 12021 12022 12023 12024 12025

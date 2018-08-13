@@ -52,10 +52,8 @@ services:
       - "21:21"
     volumes:
       - ${DOCUMENT_ROOT-./www}:/srv
- #     - ${DOCUMENT_ROOT-./bin/vsftpd/entrypoint.sh}:/entrypoint.cmd/entrypoint.sh
+      - ${DOCUMENT_ROOT-./bin/vsftpd/vsftpd.chroot_list}:/etc/vsftpd.chroot_list
     environment:
-      #- FTP_USER=dev
-      #- FTP_PASSWORD=dev
-      - FTP_USERS_ROOT=yes
-      - FTP_USER_*=dev:dev joomla1:joomla1 joomal2:joomla2
-      #- FTP_PATH=/storage/ftp
+      - FTP_USER=dev
+      - FTP_PASSWORD=dev
+      - FTP_PATH=/storage/ftp
