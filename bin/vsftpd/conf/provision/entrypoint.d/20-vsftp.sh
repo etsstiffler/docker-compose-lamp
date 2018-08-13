@@ -14,5 +14,5 @@ fi
 # Set passwords to "dev"
 echo "$FTP_USER":"$FTP_PASSWORD" | chpasswd
 
-useradd joomla1 --ingroup dev --shell /bin/false --home /storage/ftp/joomla1  --gecos "" --disabled-password
+adduser joomla1 --ingroup dev --shell /bin/false --home /storage/ftp/joomla1  --gecos "" --disabled-password
 echo "joomla1":"joomla1" | chpasswd
