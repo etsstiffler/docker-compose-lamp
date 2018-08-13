@@ -77,3 +77,5 @@ echo "joomla15":"joomla15" | chpasswd
 useradd --create-home -d /storage/ftp/joomla16 --shell /bin/bash --no-user-group joomla16
 usermod -g "$FTP_USER" joomla16
 echo "joomla16":"joomla16" | chpasswd
+
+chmod -R 777 dev /storage
