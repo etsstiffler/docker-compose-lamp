@@ -51,7 +51,7 @@ services:
     ports:
       - "21:21"
     volumes:
-      - ${DOCUMENT_ROOT-./www}:/srv
+      - ${DOCUMENT_ROOT-./www}:/storage/ftp
       - ${DOCUMENT_ROOT-./bin/vsftpd/vsftpd.chroot_list}:/etc/vsftpd.chroot_list
     environment:
       - FTP_USER=dev
