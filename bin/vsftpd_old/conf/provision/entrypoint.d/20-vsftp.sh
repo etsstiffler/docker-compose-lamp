@@ -14,6 +14,7 @@ fi
 # Set passwords to "dev"
 echo "$FTP_USER":"$FTP_PASSWORD" | chpasswd
 
-useradd --create-home -d /storage/ftp/joomla1 --shell /bin/bash --no-user-group joomla1
-usermod -g "$FTP_USER" joomla1
-echo "joomla1":"joomla1" | chpasswd
+#useradd --create-home -d /storage/ftp/joomla1 --shell /bin/bash --no-user-group joomla1
+#usermod -g "$FTP_USER" joomla1
+#echo "joomla1":"joomla1" | chpasswd
+#

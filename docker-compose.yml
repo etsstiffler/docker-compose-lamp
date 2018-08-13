@@ -51,9 +51,9 @@ services:
     ports:
       - "21:21"
     volumes:
-      - ${DOCUMENT_ROOT-./www}:/storage/ftp/
+      - ${DOCUMENT_ROOT-./www}:/srv
  #     - ${DOCUMENT_ROOT-./bin/vsftpd/entrypoint.sh}:/entrypoint.cmd/entrypoint.sh
     environment:
       - FTP_USER=dev
       - FTP_PASSWORD=dev
-      - FTP_PATH=/storage/ftp
+      #- FTP_PATH=/storage/ftp
