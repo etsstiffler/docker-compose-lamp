@@ -18,37 +18,37 @@ useradd --create-home -d /storage/ftp/joomla1 --shell /bin/false --no-user-group
 usermod -g "$FTP_USER" joomla1
 echo "joomla1":"joomla1" | chpasswd
 
-useradd --create-home -d /storage/ftp/joomla2 --shell /bin/false --no-user-group joomla2
-usermod -g "$FTP_USER" joomla2
-echo "joomla2":"joomla2" | chpasswd
+useradd --create-home -d /storage/ftp/joomla02 --shell /bin/false --no-user-group joomla02
+usermod -g "$FTP_USER" joomla02
+echo "joomla02":"joomla02" | chpasswd
 
-useradd --create-home -d /storage/ftp/joomla3 --shell /bin/false --no-user-group joomla3
-usermod -g "$FTP_USER" joomla3
-echo "joomla3":"joomla3" | chpasswd
+useradd --create-home -d /storage/ftp/joomla03 --shell /bin/false --no-user-group joomla03
+usermod -g "$FTP_USER" joomla03
+echo "joomla03":"joomla03" | chpasswd
 
-useradd --create-home -d /storage/ftp/joomla4 --shell /bin/false --no-user-group joomla4
-usermod -g "$FTP_USER" joomla4
-echo "joomla4":"joomla4" | chpasswd
+useradd --create-home -d /storage/ftp/joomla04 --shell /bin/false --no-user-group joomla04
+usermod -g "$FTP_USER" joomla04
+echo "joomla04":"joomla04" | chpasswd
 
-useradd --create-home -d /storage/ftp/joomla5 --shell /bin/false --no-user-group joomla5
-usermod -g "$FTP_USER" joomla5
-echo "joomla5":"joomla5" | chpasswd
+useradd --create-home -d /storage/ftp/joomla05 --shell /bin/false --no-user-group joomla05
+usermod -g "$FTP_USER" joomla05
+echo "joomla05":"joomla05" | chpasswd
 
-useradd --create-home -d /storage/ftp/joomla6 --shell /bin/false --no-user-group joomla6
-usermod -g "$FTP_USER" joomla6
-echo "joomla6":"joomla6" | chpasswd
+useradd --create-home -d /storage/ftp/joomla06 --shell /bin/false --no-user-group joomla06
+usermod -g "$FTP_USER" joomla06
+echo "joomla06":"joomla06" | chpasswd
 
-useradd --create-home -d /storage/ftp/joomla7 --shell /bin/false --no-user-group joomla7
-usermod -g "$FTP_USER" joomla7
-echo "joomla7":"joomla7" | chpasswd
+useradd --create-home -d /storage/ftp/joomla07 --shell /bin/false --no-user-group joomla07
+usermod -g "$FTP_USER" joomla07
+echo "joomla07":"joomla07" | chpasswd
 
-useradd --create-home -d /storage/ftp/joomla8 --shell /bin/false --no-user-group joomla8
-usermod -g "$FTP_USER" joomla8
-echo "joomla8":"joomla8" | chpasswd
+useradd --create-home -d /storage/ftp/joomla08 --shell /bin/false --no-user-group joomla08
+usermod -g "$FTP_USER" joomla08
+echo "joomla08":"joomla08" | chpasswd
 
-useradd --create-home -d /storage/ftp/joomla9 --shell /bin/false --no-user-group joomla9
-usermod -g "$FTP_USER" joomla9
-echo "joomla9":"joomla9" | chpasswd
+useradd --create-home -d /storage/ftp/joomla09 --shell /bin/false --no-user-group joomla09
+usermod -g "$FTP_USER" joomla09
+echo "joomla09":"joomla09" | chpasswd
 
 useradd --create-home -d /storage/ftp/joomla10 --shell /bin/false --no-user-group joomla10
 usermod -g "$FTP_USER" joomla10
