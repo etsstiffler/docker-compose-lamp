@@ -47,11 +47,15 @@ This will be used to store Apache logs. The default value for this is `./logs/ap
 
 _**MYSQL_LOG_DIR**_
 
-This will be used to store Apache logs. The default value for this is `./logs/mysql`.
+This will be used to store MYSQL logs. The default value for this is `./logs/mysql`.
 
-_**VSFTPD_CONF**_
+_**REDIS_DATA_DIR**_
 
-This will be used to store vsftpd configuration. The default value for this is `./config/vsftpd`.
+This is REDIS data directory. The default value for this is `./data/redis`. All your REDIS data files will be stored here.
+
+_**PORTAINER_DATA_DIR**_
+
+This is PORTAINER data directory. The default value for this is `./data/portainer`. All your portainer data files will be stored here.
 
 ## Web Server
 
