@@ -79,6 +79,7 @@ The installed version of PHP is 7.1.
 By default following extensions are installed.
 
 * mysqli
+* pdo
 * mbstring
 * zip
 * intl
