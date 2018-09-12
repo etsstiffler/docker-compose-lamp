@@ -54,6 +54,7 @@ services:
       - ${DOCUMENT_ROOT-./www}:/storage/ftp
       - ${DOCUMENT_ROOT-./bin/vsftpd/vsftpd.chroot_list}:/etc/vsftpd.chroot_list
       - ${DOCUMENT_ROOT-./bin/vsftpd/shells}:/etc/shells
+      - ${DOCUMENT_ROOT-./bin/vsftpd/conf/etc/vsftpd/vsftpd.conf}:/etc/vsftpd.conf
     environment:
       - FTP_USER=dev
       - FTP_PASSWORD=dev
