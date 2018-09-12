@@ -16,6 +16,8 @@ services:
       - ${PHP_INI-./config/php/php.ini}:/usr/local/etc/php/php.ini
       - ${VHOSTS_DIR-./config/vhosts}:/etc/apache2/sites-enabled
       - ${LOG_DIR-./logs/apache2}:/var/log/apache2
+    networks:
+      - kurs-network
   mysql:
     build: ./bin/mysql
     container_name: 'jgs2-mysql'
@@ -28,6 +30,8 @@ services:
       - ${DOCUMENT_ROOT-./bin/mysql/entrypoint.sql}:/docker-entrypoint-initdb.d/create_users_db.sql
     environment:
       MYSQL_ROOT_PASSWORD: tiger
+    networks:
+      - kurs-network
   phpmyadmin:
     image: phpmyadmin/phpmyadmin
     container_name: 'jgs2-phpmyadmin'
@@ -41,6 +45,8 @@ services:
       - '8080:80'
     volumes: 
       - /sessions
+    networks:
+      - kurs-network
   ftp:
     build:
       context: ./bin/vsftpd/
@@ -49,16 +55,17 @@ services:
     links:
       - webserver
     ports:
-      - "212:21"
+      - "21:21"
     volumes:
       - ${DOCUMENT_ROOT-./www}:/storage/ftp
       - ${DOCUMENT_ROOT-./bin/vsftpd/vsftpd.chroot_list}:/etc/vsftpd.chroot_list
       - ${DOCUMENT_ROOT-./bin/vsftpd/shells}:/etc/shells
-      - ${DOCUMENT_ROOT-./bin/vsftpd/conf/etc/vsftpd/vsftpd.conf}:/etc/vsftpd.conf
     environment:
       - FTP_USER=dev
       - FTP_PASSWORD=dev
       - FTP_PATH=/storage/ftp
+    networks:
+      - kurs-network
   redis:
     container_name: 'jgs2-redis'
     image: redis:latest
@@ -66,3 +73,9 @@ services:
       - ${REDIS_DATA_DIR-./data/redis}:/data
     ports:
       - "6379:6379"
+    networks:
+      - kurs-network
+ 
+networks:
+  kurs-network:
+    driver: bridge
