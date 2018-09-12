@@ -49,7 +49,7 @@ services:
     links:
       - webserver
     ports:
-      - "21:21"
+      - "212:21"
     volumes:
       - ${DOCUMENT_ROOT-./www}:/storage/ftp
       - ${DOCUMENT_ROOT-./bin/vsftpd/vsftpd.chroot_list}:/etc/vsftpd.chroot_list
@@ -66,11 +66,3 @@ services:
       - ${REDIS_DATA_DIR-./data/redis}:/data
     ports:
       - "6379:6379"
-  portainer:
-    image: portainer/portainer
-    ports:
-      - "9000:9000"
-    command: -H unix:///var/run/docker.sock
-    volumes:
-      - /var/run/docker.sock:/var/run/docker.sock
-      - ${PORTAINER_DATA-./data/portainer}:/data
