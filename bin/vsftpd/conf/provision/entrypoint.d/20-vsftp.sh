@@ -15,6 +15,7 @@ fi
 echo "$FTP_USER":"$FTP_PASSWORD" | chpasswd
 
 if ! id -u joomla01 > /dev/null 2>&1; then
+    sudo su
     useradd --create-home -d /storage/ftp/joomla01 --shell /bin/false --no-user-group joomla01
     usermod -g "$FTP_USER" joomla01
     echo "joomla1":"joomla1" | chpasswd
