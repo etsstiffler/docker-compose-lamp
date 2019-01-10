@@ -71,7 +71,7 @@ services:
     container_name: 'jgs2-redis'
     image: redis:latest
     restart: 'always'
-    link: 
+    links: 
       - webserver
     volumes:
       - ${REDIS_DATA_DIR-./data/redis}:/data

@@ -2,10 +2,11 @@
 
 This is a basic LAMP stack environment built using Docker Compose. It consists following:
 
-* PHP 7.1
+* PHP 7.3
 * Apache 2.4
-* MariaDB 10.3.6
+* MariaDB 10.4.1
 * phpMyAdmin
+* redis
 
 ## Installation
 
